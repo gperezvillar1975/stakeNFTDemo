@@ -57,7 +57,7 @@ module.exports = {
      },
       network_id: '4',
       websockets: true,
-      gas: 30000000,
+      gas: 8000000,
       gasPrice: 10000000000
      },
      bsc: {
