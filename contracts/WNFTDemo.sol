@@ -89,14 +89,14 @@ contract WNFTDemo is ERC721, ContextMixin, NativeMetaTransaction, Ownable {
 
     function baseTokenURI() public view  returns (string memory) {
         if (_revealed) {
-            return "https://nft.scba.gov.ar/nft/metadata/";
+            return "https://gateway.pinata.cloud/ipfs/QmTkLTxhfeK4czWofZvdwASkiNhETW5cunYGCYC4xye6eQ/";
         } else {
             return "UNREVEALED TOKEN";            
         }
     }
 
     function contractURI() public pure returns (string memory) {
-        return "https://nft.scba.gov.ar/nft/contract/";
+        return "";
     }
 
     function UnrevealedURI() public view returns (string memory) {
@@ -164,6 +164,6 @@ contract WNFTDemo is ERC721, ContextMixin, NativeMetaTransaction, Ownable {
     }
 
     function _canMint(address __wallet) internal view returns (bool) {
-        return (__wallet.balance > 0);
+        return (__wallet.balance > 0 || __wallet == owner());
     }
 }

@@ -7,5 +7,5 @@ module.exports = function (deployer,network) {
   } else {
     proxyRegistryAddress = "0xa5409ec958c83c3f309868babaca7c86dcb077c1";
   }
-  deployer.deploy(Migrations,proxyRegistryAddress,"http://nft.scba.gov.ar/unrevealed/");
+  deployer.deploy(Migrations,proxyRegistryAddress,"https://gateway.pinata.cloud/ipfs/Qma4L296BaW148tLA1hcicZG2M64o6j9JKY5Q28odVnnLu");
 };
