@@ -53,7 +53,7 @@ contract WNFTDemo is ERC721, ContextMixin, NativeMetaTransaction, Ownable {
     function mint() public {
         require(! _paused,"Contract Paused");
         require(msg.sender != address(0),"Zero address");
-        require(_whiteList[msg.sender] > 0 || msg.sender == owner(), "NOT Whitelisted" );
+        //require(_whiteList[msg.sender] > 0 || msg.sender == owner(), "NOT Whitelisted" );
         address _to = msg.sender;
         uint256 currentTokenId = _nextTokenId.current();
         _nextTokenId.increment();
@@ -89,7 +89,7 @@ contract WNFTDemo is ERC721, ContextMixin, NativeMetaTransaction, Ownable {
 
     function baseTokenURI() public view  returns (string memory) {
         if (_revealed) {
-            return "https://gateway.pinata.cloud/ipfs/QmTkLTxhfeK4czWofZvdwASkiNhETW5cunYGCYC4xye6eQ/";
+            return "https://ipfs.io/ipfs/QmcfRWW9b95jFwoUsjfC8oz9R5js4uSP5i7oeAecLJqp6y/";
         } else {
             return "UNREVEALED TOKEN";            
         }

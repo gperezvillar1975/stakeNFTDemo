@@ -1,0 +1,31 @@
+{
+    "image": "https://ipfs.io/ipfs/QmWeZiPt6mNbxerMmVkkoHnW3coNhtDnXry2tjv1CVLo7R/49.png",
+    "tokenId": 49,
+    "name": "NFT DEMO 49",
+    "attributes": [
+        {
+            "trait_type": "Face",
+            "value": "White"
+        },
+        {
+            "trait_type": "Ears",
+            "value": "Left Earring"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Small"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Thin Hair"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Big Smile"
+        },
+        {
+            "trait_type": "Nose",
+            "value": "Nose"
+        }
+    ]
+}

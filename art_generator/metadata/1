@@ -1,0 +1,31 @@
+{
+    "image": "https://ipfs.io/ipfs/QmWeZiPt6mNbxerMmVkkoHnW3coNhtDnXry2tjv1CVLo7R/1.png",
+    "tokenId": 1,
+    "name": "NFT DEMO 1",
+    "attributes": [
+        {
+            "trait_type": "Face",
+            "value": "White"
+        },
+        {
+            "trait_type": "Ears",
+            "value": "Right Earring"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Focused"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Orange Hair"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Smile"
+        },
+        {
+            "trait_type": "Nose",
+            "value": "Nose"
+        }
+    ]
+}

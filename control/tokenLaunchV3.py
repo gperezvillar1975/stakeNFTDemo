@@ -69,7 +69,7 @@ def main(args):
 
     #TOKEN CONFIGURATION
     #BSC ENDPOINT
-    blockchain_address = 'https://data-seed-prebsc-1-s2.binance.org:8545'
+    blockchain_address = 'https://rinkeby.infura.io/v3/26763e533f734041b01ddfc8c90d8824'
     #LOCAL ENDPOINT
     #blockchain_address = 'http://10.10.12.40:8545'
     #BSC WALLET
@@ -96,47 +96,17 @@ def main(args):
     web3.eth.defaultAccount = mainWallet.address
     print("Owner Wallet: " + mainWallet.address)
     print("Token address: " + token_address)
-    with open('../build/contracts/RoundTokenV2.json') as file:
+    with open('../build/contracts/WNFTDemo.json') as file:
         contract_json = json.load(file)      # load contract info as JSON
         contract_abi = contract_json['abi']  # fetch contract's abi - necessary to call its functions
 
     contract = web3.eth.contract(address=token_address, abi=contract_abi)
 
-    if ( start_process) :
-        print('Set token initial configuration ...')
-        wrapper.configure(web3,mainWallet,contract,maxrounds,web3.toWei(buyLimit,"ether"),roundTime,sellTax,buyTax,taxWallet)
-        print('Whitelistening addresses')
-        for wallet,round in wallets:        
-            isListed = contract.functions.isWhiteListed(wallet).call()
-            if (not isListed):
-                wrapper.whiteListAddress(web3,mainWallet,contract,wallet,round)
 
-        #wrapper.roundStart(web3,mainWallet,contract)
-        print('Waiting for token liquidity add on PancakeSwap ...')
-        canStart = contract.functions.canStartRound().call()
-        while (not canStart):
-            time.sleep(1)
-            canStart = contract.functions.canStartRound().call()
+    #wrapper.mint(web3,mainWallet,contract)
+    #wrapper.reveal(web3,mainWallet,contract)
+    print(contract.functions.tokenURI(2).call())
 
-        event_catch(web3,contract,maxrounds)
-
-    else:  
-        if p_defined:      
-            if pauseContract:
-                print("Pausing contract")
-                wrapper.pauseContract(web3,mainWallet,contract)
-            else:
-                print("Resuming contract")
-                wrapper.resumeContract(web3,mainWallet,contract)
-        if h_defined:
-            if HoneyPot:
-                print("Pausing sells. Honeypot mode ON")
-                print("!!!! IMPORTANT !!!!!")
-                print("MUST use honeypot mode only for testing and experimental purpouses")            
-                wrapper.pauseSell(web3,mainWallet,contract)
-            else:
-                print("resuming sells. Honeypot mode OFF")
-                wrapper.resumeSell(web3,mainWallet,contract)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

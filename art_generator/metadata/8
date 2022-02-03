@@ -1,0 +1,31 @@
+{
+    "image": "https://ipfs.io/ipfs/QmWeZiPt6mNbxerMmVkkoHnW3coNhtDnXry2tjv1CVLo7R/8.png",
+    "tokenId": 8,
+    "name": "NFT DEMO 8",
+    "attributes": [
+        {
+            "trait_type": "Face",
+            "value": "White"
+        },
+        {
+            "trait_type": "Ears",
+            "value": "Right Earring"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Regular"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Bubble Hair"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Big Smile"
+        },
+        {
+            "trait_type": "Nose",
+            "value": "Nose Ring"
+        }
+    ]
+}

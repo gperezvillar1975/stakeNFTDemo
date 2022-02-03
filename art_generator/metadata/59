@@ -1,0 +1,31 @@
+{
+    "image": "https://ipfs.io/ipfs/QmWeZiPt6mNbxerMmVkkoHnW3coNhtDnXry2tjv1CVLo7R/59.png",
+    "tokenId": 59,
+    "name": "NFT DEMO 59",
+    "attributes": [
+        {
+            "trait_type": "Face",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Ears",
+            "value": "No Earring"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Regular"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Red Mohawk"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Red Lipstick"
+        },
+        {
+            "trait_type": "Nose",
+            "value": "Nose"
+        }
+    ]
+}

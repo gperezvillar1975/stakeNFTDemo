@@ -1,0 +1,31 @@
+{
+    "image": "https://ipfs.io/ipfs/QmWeZiPt6mNbxerMmVkkoHnW3coNhtDnXry2tjv1CVLo7R/55.png",
+    "tokenId": 55,
+    "name": "NFT DEMO 55",
+    "attributes": [
+        {
+            "trait_type": "Face",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Ears",
+            "value": "No Earring"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Regular"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Up Hair"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Purple Lipstick"
+        },
+        {
+            "trait_type": "Nose",
+            "value": "Nose Ring"
+        }
+    ]
+}

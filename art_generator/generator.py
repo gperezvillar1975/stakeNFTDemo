@@ -3,6 +3,7 @@ from IPython.display import display
 import random
 import json
 import os
+import sys
 
 # Each image is made up a series of traits
 # The weightings for each trait drive the rarity and add up to 100%
@@ -211,7 +212,7 @@ f = open('./metadata/all-traits.json',)
 data = json.load(f)
 
 # Changes this IMAGES_BASE_URL to yours 
-IMAGES_BASE_URL = "https://gateway.pinata.cloud/ipfs/QmR7WyobVvN7AhiBj1PT3cv7EYE9fs2Sjaty17Q4jJnYjG/"
+IMAGES_BASE_URL = "https://ipfs.io/ipfs/QmWeZiPt6mNbxerMmVkkoHnW3coNhtDnXry2tjv1CVLo7R/"
 PROJECT_NAME = "NFT DEMO"
 
 def getAttribute(key, value):
@@ -235,6 +236,6 @@ for i in data:
     token["attributes"].append(getAttribute("Mouth", i["Mouth"]))
     token["attributes"].append(getAttribute("Nose", i["Nose"]))
 
-    with open('./metadata/' + str(token_id) + ".json", 'w') as outfile:
+    with open('./metadata/' + str(token_id) , 'w') as outfile:
         json.dump(token, outfile, indent=4)
 f.close()

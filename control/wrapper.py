@@ -4,6 +4,25 @@ from eth_utils import address
 from web3 import Web3, HTTPProvider
 from web3.middleware import geth_poa_middleware
 
+def mint(web3,wallet,contract):
+    nonce = web3.eth.getTransactionCount(wallet.address)
+    txn = contract.functions.mint().buildTransaction({
+        'chainId':4,'gas': 100000, 'gasPrice': web3.toWei(10,'gwei'), 'nonce': nonce
+    })
+    signed_txn = web3.eth.account.sign_transaction(txn,private_key=wallet.privateKey )
+    tx_hash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    web3.eth.wait_for_transaction_receipt(tx_hash)
+
+def reveal(web3,wallet,contract):
+    nonce = web3.eth.getTransactionCount(wallet.address)
+    txn = contract.functions.reveal().buildTransaction({
+        'chainId':4,'gas': 100000, 'gasPrice': web3.toWei(10,'gwei'), 'nonce': nonce
+    })
+    signed_txn = web3.eth.account.sign_transaction(txn,private_key=wallet.privateKey )
+    tx_hash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    web3.eth.wait_for_transaction_receipt(tx_hash)
+
+
 def configure(web3,wallet,contract,maxrounds,buyLimit,roundTime,sellTax,buyTax,taxWallet):
     nonce = web3.eth.getTransactionCount(wallet.address)
     txn = contract.functions.configure(maxrounds,buyLimit,roundTime,sellTax,buyTax,taxWallet).buildTransaction({
