@@ -10,6 +10,7 @@ import wrapper
 import time
 import asyncio
 from event_loop import log_loop, check_round
+import optionsmenu as optionsmenu
 
 
 
@@ -109,5 +110,6 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    print(optionsmenu.get_menu_choice())
+    #main(sys.argv[1:])
 
